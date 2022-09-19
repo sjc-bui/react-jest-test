@@ -1,10 +1,12 @@
 import React from "react";
 
-function Todo() {
-
+function Todo({ todo }) {
+  const { id, title, completed } = todo;
+  const p = <h1>{title}</h1>
+  const text = completed ? <strike>{p}</strike> : p;
   return (
-    <div data-testid="todo-1">
-      <h1>Todo</h1>
+    <div data-testid={`todo-${id}`}>
+      {text}
     </div>
   )
 }
